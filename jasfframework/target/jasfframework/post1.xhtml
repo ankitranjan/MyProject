@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>A Simple JavaServer Faces DB Interaction Application</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h2>DB Interaction App</h2>
+        <h4>The following entries had been added to the database</h4>
+        <p>
+			<h:messages />
+		</p>
+        <table>
+            <tr>
+                <td>Employee Id:</td>
+                <td><h:outputText value="#{bean1.employeeId}"/></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><h:outputText value="#{bean1.name}"/></td>
+            </tr>
+            <tr>
+                <td>Designation:</td>
+                <td><h:outputText value="#{bean1.designation}"/>    </td>
+            </tr>
+            <tr>
+                <td>salary:</td>
+                <td><h:outputText value="#{bean1.salary}"/></td>
+            </tr>
+           
+        </table>
+    </h:form>
+</h:body>
+</html>

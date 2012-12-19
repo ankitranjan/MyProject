@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>A Simple JavaServer Faces Registration Application</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h2>JSF Registration App</h2>
+		<h4>Registration Form</h4>
+		<table>
+			<tr>
+				<td>First Name:</td>
+				<td><p:inputText label="First Name" id="fname"
+						value="#{userBean.firstName}" required="true" /> <p:message
+						for="fname" /></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><p:inputText label="Last Name" id="lname"
+						value="#{userBean.lastName}" required="true" /> <p:message
+						for="lname" /></td>
+			</tr>
+			<tr>
+				<td>Sex:</td>
+				<td><p:selectOneRadio label="Sex" id="sex"
+						value="#{userBean.sex}" required="true">
+						<f:selectItem itemLabel="Male" itemValue="male" />
+						<f:selectItem itemLabel="Female" itemValue="female" />
+					</p:selectOneRadio> <p:message for="sex" /></td>
+			</tr>
+			<tr>
+				<td>Date of Birth:</td>
+				<td>
+				<p:calendar value="#{userBean.dob}" id="cal" showButtonPanel="true"/> 
+				</td>
+			</tr>
+			<tr>
+				<td>Email Address:</td>
+				<td><p:inputText label="Email Address" id="email"
+						value="#{userBean.email}" required="true"
+						validator="#{userBean.validateEmail}" /> <p:message for="email" />
+				</td>
+			</tr>
+			<tr>
+				<td>Service Level:</td>
+				<td><p:selectOneMenu label="Service Level"
+						value="#{userBean.serviceLevel}">
+						<f:selectItem itemLabel="Medium" itemValue="medium" />
+						<f:selectItem itemLabel="Basic" itemValue="basic" />
+						<f:selectItem itemLabel="Premium" itemValue="premium" />
+					</p:selectOneMenu></td>
+			</tr>
+		</table>
+		<p>
+			<h:messages />
+		</p>
+		<p>
+			<p:commandButton value="Register" action="confirm" update="@form" process="@form"/>
+		</p>
+		<p>
+			<h:commandButton value="Reset" action="register" update="@form" immediate ="true"/>
+		</p>
+	</h:form>
+</h:body>
+</html>
